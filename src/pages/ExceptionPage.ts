@@ -1,4 +1,5 @@
 import {Page, Locator} from '@playwright/test'; 
+import { BASE_URL } from '../utils/env';  
 
 export class ExceptionPage {
   readonly page: Page;
@@ -19,7 +20,10 @@ export class ExceptionPage {
   }
 
   async navigate() {
-    await this.page.goto('https://practicetestautomation.com/practice-test-exceptions/');
+    //await this.page.goto('https://practicetestautomation.com/practice-test-exceptions/');
+    await this.page.goto(
+      `${BASE_URL}/practice-test-exceptions/`
+    );
   }
 
   async clickAddButton() {

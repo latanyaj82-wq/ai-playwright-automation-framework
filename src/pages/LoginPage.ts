@@ -1,4 +1,5 @@
 import {Page, Locator} from '@playwright/test';
+import { BASE_URL } from '../utils/env';
 
 export class LoginPage {
   readonly page: Page;
@@ -16,7 +17,9 @@ export class LoginPage {
   }
 
   async navigate() {
-    await this.page.goto('https://practicetestautomation.com/practice-test-login/');
+      await this.page.goto(
+        `${BASE_URL}//practice-test-login/`
+      );
   }
 
   async login(username: string, password: string) {

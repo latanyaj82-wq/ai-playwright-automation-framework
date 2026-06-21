@@ -1,4 +1,5 @@
 import {Page, Locator} from '@playwright/test';
+import { BASE_URL } from '../utils/env';
 
 export class TablePage {
     readonly page: Page;
@@ -33,7 +34,10 @@ export class TablePage {
 
     //----- Navigation Methods -----//
     async navigate() {
-        await this.page.goto('https://practicetestautomation.com/practice-test-table/');
+        //await this.page.goto('https://practicetestautomation.com/practice-test-table/');
+    await this.page.goto(
+        `${BASE_URL}/practice-test-table/`
+     );
     }
 
     //----- Filter Methods -----//
