@@ -7,3 +7,9 @@ export const testData = {
     invalidUsername: 'incorrectUser',
     invalidPassword: 'incorrectPassword'
 };  
+
+export const postData = {
+    title: 'My First API Test',
+    body: 'Learning Playwright API Automation',
+    userId: 1
+};
