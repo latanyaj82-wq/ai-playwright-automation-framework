@@ -1,0 +1,9 @@
+
+
+export const testData = {
+    validUsername: 'student',
+    validPassword: 'Password123',
+
+    invalidUsername: 'incorrectUser',
+    invalidPassword: 'incorrectPassword'
+};  
