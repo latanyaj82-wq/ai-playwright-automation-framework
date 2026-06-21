@@ -20,21 +20,3 @@ test('TC1: Verify Language Filter -> Java', async ({page}) => {
 
 });
     
-     // const visibleRows = page.locator('#courses_table tbody tr:visible');
-   // const levels: string[] = [];
-
-
-   // await page.goto('https://practicetestautomation.com/practice-test-table/'); // Replace with actual URL
-   // await page.locator('#enrollDropdown').click();
-    //await page.getByRole('option', { name: '10,000+' }).click();
-
-   // const visibleRows = page.locator('#courses_table tbody tr:visible');
-    //const enrollments: number[] = [];
-
-    /* for (let i = 0; i < await visibleRows.count(); i++) {
-        const enrollmentCell = visibleRows.nth(i).locator('td[data-col="enrollments"]');
-        const enrollment = Number(await enrollmentCell.innerText());
-        expect(enrollment).toBeGreaterThanOrEqual(10000);
-        console.log(enrollment);
-
-    }  */

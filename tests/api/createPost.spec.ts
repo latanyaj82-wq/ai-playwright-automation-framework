@@ -5,11 +5,7 @@ import { postData } from '../../src/utils/testData';
 test('Create New Post', async ({request}) =>{
 
     const payload = postData;
-    /* const payload = {
-        title: 'My First API Test',
-        body: 'Learning Playwright API Automation',
-        userId: 1
-    }; */
+
 
     const response = await request.post(
         'https://jsonplaceholder.typicode.com/posts',
