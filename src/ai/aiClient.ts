@@ -3,7 +3,11 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.dev' });
 
-console.log('API Key:', process.env.OPENAI_API_KEY);
+//console.log('API Key:', process.env.OPENAI_API_KEY);
+console.log(
+  'OpenAI Key Loaded:',
+  !!process.env.OPENAI_API_KEY
+);
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,

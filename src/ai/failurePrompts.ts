@@ -1,25 +1,19 @@
 export function generateFailureAnalysisPrompt(
-  testName: string,
-  errorMessage: string
+  failureJson: string
 ): string {
-
   return `
-You are a senior QA automation engineer.
-
 Analyze the following Playwright test failure.
-
-Test Name:
-${testName}
-
-Error:
-${errorMessage}
 
 Provide:
 
 1. Root Cause
-2. Possible Reasons
-3. Recommended Fixes
+2. Explanation
+3. Recommended Fix
 
-Format as markdown.
+Failure:
+
+${failureJson}
+
+Return the response in markdown format.
 `;
 }

@@ -1,33 +1,32 @@
-import { generateTestCases } from './aiClient.js';
-import { generateFailureAnalysisPrompt } from './failurePrompts.js';
 import fs from 'fs';
+import { generateTestCases } from './aiClient.js';
+import { generateFailureAnalysisPrompt }from './failurePrompts.js';
 
 async function main() {
+  const failure =
+    fs.readFileSync(
+      'failure-data/latestFailure.json',
+      'utf-8'
+    );
 
-  const failure = JSON.parse(
-  fs.readFileSync(
-    'failure-data/latestFailure.json',
-    'utf8'
-  )
-);
+  const prompt =
+    generateFailureAnalysisPrompt(
+      failure
+    );
 
-const prompt =
-  generateFailureAnalysisPrompt(
-    failure.testName,
-    failure.errorMessage
+  const report =
+    await generateTestCases(
+      prompt
+    );
+
+  fs.writeFileSync(
+    'failure-reports/login-failure-report.md',
+    report
   );
 
-  const result =
-    await generateTestCases(prompt);
-
- fs.writeFileSync(
-  'failure-reports/login-failure-report.md',
-  result
-);
-
-console.log(
-  'Failure report saved successfully'
-);
+  console.log(
+    'Failure report generated'
+  );
 }
 
 main().catch(console.error);
