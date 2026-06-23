@@ -1,3 +1,13 @@
 node_modules/
 playwright-report/
 test-results/
+node_modules/
+playwright-report/
+test-results/
+
+# Environment files
+.env
+.env.*
+
+# Mac files
+.DS_Store
