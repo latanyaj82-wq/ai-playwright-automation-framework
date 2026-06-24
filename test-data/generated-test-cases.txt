@@ -1,0 +1,10 @@
+Test Case: Successful Login
+
+Steps:
+1. Navigate to login page
+2. Enter username
+3. Enter password
+4. Click Login
+
+Expected Result:
+User is redirected to dashboard.
