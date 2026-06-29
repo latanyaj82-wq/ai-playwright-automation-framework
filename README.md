@@ -107,11 +107,18 @@ The AI Playwright Automation Framework follows a modular architecture that separ
 
 ## Overall Framework Architecture
 
+The AI Playwright Automation Framework follows a modular architecture that separates test logic, page objects, fixtures, utilities, reporting, and CI/CD into independent layers. This design promotes maintainability, scalability, code reuse, and easier collaboration. Test execution flows through the Playwright engine across multiple browsers while automatically generating reports, logs, screenshots, and videos for comprehensive test analysis.
+
 ![Framework Architecture](docs/images/framework-architecture.png)
 
+<p align="center">
+  <img src="docs/images/framework-architecture.png" width="1000">
+</p>
 ---
 
 ## Docker Architecture
+
+The framework is containerized using Docker to provide a consistent execution environment across developer machines and CI/CD pipelines. The Docker image packages Playwright, browser dependencies, project source code, and configuration into a single portable container, ensuring reliable and reproducible test execution regardless of the host environment.
 
 ![Docker Architecture](docs/images/docker-architecture.png)
 
@@ -119,10 +126,14 @@ The AI Playwright Automation Framework follows a modular architecture that separ
 
 ## GitHub Actions CI/CD Workflow
 
+The GitHub Actions pipeline automates the continuous integration process by executing Playwright tests whenever code is pushed to the repository. The workflow installs project dependencies, runs the automated test suite, generates HTML and Allure reports, and uploads execution artifacts, enabling fast feedback and simplifying test result analysis.
+
 ![CI/CD Workflow](docs/images/cicd-workflow.png)
 
 ---
 
 ## Test Execution Flow
+
+This diagram illustrates the lifecycle of an automated test from execution to reporting. A test case initializes the required fixtures and page objects before interacting with the application through Playwright. After validation, the framework automatically captures logs, screenshots, videos, and trace files, then generates comprehensive HTML and Allure reports for debugging and analysis.
 
 ![Test Execution Flow](docs/images/test-execution-flow.png)
