@@ -133,3 +133,239 @@ The GitHub Actions pipeline automates the continuous integration process by exec
 This diagram illustrates the lifecycle of an automated test from execution to reporting. A test case initializes the required fixtures and page objects before interacting with the application through Playwright. After validation, the framework automatically captures logs, screenshots, videos, and trace files, then generates comprehensive HTML and Allure reports for debugging and analysis.
 
 ![Test Execution Flow](docs/images/test-execution-flow.png)
+
+---
+
+# 📁 Project Structure
+
+```text
+ai-playwright-automation-framework/
+├── .github/                 # GitHub Actions workflows
+├── docs/
+│   └── images/              # Architecture diagrams
+├── src/
+│   ├── fixture/             # Custom Playwright fixtures
+│   ├── pages/               # Page Object Model classes
+│   └── utils/               # Logger, environment config, helpers
+├── test-data/               # Test data files
+├── tests/                   # UI and API test suites
+├── screenshots/             # Failure screenshots
+├── allure-results/          # Allure raw results
+├── allure-report/           # Generated Allure reports
+├── playwright-report/       # Playwright HTML reports
+├── Dockerfile
+├── package.json
+├── playwright.config.ts
+└── README.md
+```
+
+---
+
+# 💻 Prerequisites
+
+Before running the framework, ensure the following software is installed:
+
+- Node.js 20+
+- npm
+- Git
+- Docker Desktop (optional)
+- Visual Studio Code (recommended)
+
+Verify your installation:
+
+```bash
+node --version
+npm --version
+git --version
+docker --version
+docker compose version
+```
+
+---
+
+# ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/ai-playwright-automation-framework.git
+```
+
+Navigate into the project:
+
+```bash
+cd ai-playwright-automation-framework
+```
+
+Install project dependencies:
+
+```bash
+npm install
+```
+
+Install Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+---
+
+# 🔧 Configuration
+
+Environment-specific settings are managed using `.env` files.
+
+Example:
+
+- `.env.dev`
+- `.env.qa`
+- `.env.prod`
+
+The framework automatically loads the appropriate environment configuration during execution.
+
+---
+
+# ▶️ Running Tests
+
+Run all tests:
+
+```bash
+npm test
+```
+
+Run UI tests:
+
+```bash
+npm run test:ui
+```
+
+Run API tests:
+
+```bash
+npm run test:api
+```
+
+Run tests in headed mode:
+
+```bash
+npm run test:headed
+```
+
+Run tests with Playwright UI Mode:
+
+```bash
+npm run test:ui-mode
+```
+
+Run a specific test:
+
+```bash
+npx playwright test tests/example.spec.ts
+```
+
+---
+
+# 📊 Test Reports
+
+The framework automatically generates multiple report formats.
+
+### Playwright HTML Report
+
+```bash
+npm run report
+```
+
+### Allure Report
+
+```bash
+npm run allure:generate
+npm run allure:open
+```
+
+Reports include:
+
+- Test Results
+- Screenshots
+- Videos
+- Trace Files
+- Execution Logs
+
+---
+
+# 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t ai-playwright-framework .
+```
+
+Run the Docker container:
+
+```bash
+docker run --rm ai-playwright-framework
+```
+
+Docker ensures consistent execution across local development and CI/CD environments.
+
+---
+
+# 🚀 GitHub Actions
+
+The framework includes a GitHub Actions workflow that automatically:
+
+- Installs project dependencies
+- Installs Playwright browsers
+- Executes automated tests
+- Generates Playwright HTML Reports
+- Uploads reports as workflow artifacts
+
+This enables continuous integration and provides immediate feedback after every code change.
+
+---
+
+# 📝 Logging
+
+The framework uses Winston to provide structured logging throughout test execution.
+
+Logging captures:
+
+- Test execution start and finish
+- Browser information
+- Execution duration
+- Errors and failures
+- Screenshot locations
+- Video attachments
+
+Logs simplify debugging and provide additional execution visibility.
+
+---
+
+# 🔮 Future Enhancements
+
+Future improvements planned for this framework include:
+
+- Parallel execution optimization
+- Database testing
+- Visual regression testing
+- Accessibility testing
+- Performance testing
+- BrowserStack integration
+- Azure DevOps pipeline support
+- Slack and Microsoft Teams notifications
+
+---
+
+---
+
+# 👩‍💻 Author
+
+## Tanya Jenkins
+
+Director of Quality Engineering | QA Automation Engineer
+
+This framework was developed as a professional learning and portfolio project to demonstrate modern QA automation engineering practices using Playwright, TypeScript, Docker, GitHub Actions, and Allure Reporting.
+
+GitHub: https://github.com/latanyaj82-wq
+
+LinkedIn: *(https://www.linkedin.com/in/tanya-jenkins-8a969a40/)*
