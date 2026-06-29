@@ -9,6 +9,9 @@ allure-report/
 failure-data/
 logs/
 screenshots/
+videos/
+trace/
+*.log
 
 # Environment files
 .env

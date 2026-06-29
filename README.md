@@ -1,5 +1,13 @@
 # 🤖 AI Playwright Automation Framework
+
 A modern end-to-end UI and API automation framework built with Playwright, TypeScript, Docker, GitHub Actions, and Allure Reporting.
+
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Allure](https://img.shields.io/badge/Allure-FF6B00?style=for-the-badge)
+![MIT License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 ## Technologies
 
@@ -12,6 +20,23 @@ The AI Playwright Automation Framework is a scalable end-to-end test automation 
 The framework supports UI automation, API testing, cross-browser execution, structured logging, screenshots, video capture, HTML reporting, Allure reporting, Docker containerization, and GitHub Actions CI/CD.
 
 The project follows the Page Object Model (POM) design pattern to improve maintainability, readability, and scalability. It serves as both a learning project and a production-style automation portfolio demonstrating industry best practices.
+
+## 🌟 Portfolio Highlights
+
+This project demonstrates:
+
+- ✅ End-to-end UI automation using Playwright
+- ✅ API testing with Playwright
+- ✅ Cross-browser testing (Chromium, Firefox, WebKit)
+- ✅ Page Object Model (POM) architecture
+- ✅ Custom Playwright fixtures
+- ✅ TypeScript-based automation framework
+- ✅ Docker containerization
+- ✅ GitHub Actions CI/CD integration
+- ✅ HTML and Allure reporting
+- ✅ Automatic screenshots and video capture on failure
+- ✅ Structured logging with Winston
+- ✅ AI-assisted test generation and failure analysis
 
 ## ✨ Features
 
@@ -353,8 +378,6 @@ Future improvements planned for this framework include:
 - BrowserStack integration
 - Azure DevOps pipeline support
 - Slack and Microsoft Teams notifications
-
----
 
 ---
 
