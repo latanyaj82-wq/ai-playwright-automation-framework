@@ -24,8 +24,9 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+// Run tests one at a time on CI.
+// On your local machine, don't override Playwright's default.
+...(process.env.CI ? { workers: 1 } : {}),
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
   ['list'],
@@ -34,13 +35,18 @@ export default defineConfig({
 ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+  // Base URL used by page.goto('/')
+  baseURL: 'http://localhost:3000',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
-    screenshot: 'only-on-failure'
-  },
+  // Keep trace files only when a test fails
+  trace: 'retain-on-failure',
+
+  // Keep screenshots only when a test fails
+  screenshot: 'only-on-failure',
+
+  // Keep videos only when a test fails
+  video: 'retain-on-failure',
+},
 
   /* Configure projects for major browsers */
   projects: [

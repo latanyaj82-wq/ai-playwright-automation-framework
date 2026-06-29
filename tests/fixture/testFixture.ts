@@ -1,10 +1,9 @@
 import { test as base } from '@playwright/test';
 import logger from '../../src/utils/logger.js';
 import path from 'path';
-import * as allure from 'allure-js-commons';
 
 // Extend Playwright's built-in test fixture so every test
-// automatically includes logging and screenshot capture.
+// automatically includes logging and evidence collection.
 export const test = base.extend({
   page: async ({ page }, use, testInfo) => {
 
@@ -16,14 +15,22 @@ export const test = base.extend({
     // Execute the actual Playwright test.
     await use(page);
 
-    // If the test did not pass, capture a screenshot.
+    // -------------------------------------------------------
+    // DEBUG ONLY
+    // Display every attachment Playwright created.
+    // We'll remove this after video is working.
+    // -------------------------------------------------------
+    //console.log('Attachments:', testInfo.attachments);
+
+    // If the test did not pass, capture evidence.
     if (testInfo.status !== 'passed') {
+
       // Create a readable screenshot filename.
-      // Example: Login_TC_1_chromium.png
+      // Example: Login_TC_3_chromium.png
       const fileName =
         `${testInfo.title.replace(/\s+/g, '_')}_${testInfo.project.name}.png`;
 
-      // Save the screenshot in the screenshots folder.
+      // Save screenshot in screenshots folder.
       const screenshotPath = path.join('screenshots', fileName);
 
       // Capture a full-page screenshot.
@@ -32,33 +39,60 @@ export const test = base.extend({
         fullPage: true,
       });
 
-      // Attach screenshot to the Allure report
-      await allure.attachmentPath('Failure Screenshot', screenshotPath, {
-        contentType: 'image/png',
-      });
+      // Attach the screenshot to the test results.
+// The Allure reporter will automatically include
+// this attachment in the report.
+await testInfo.attach('Failure Screenshot', {
+  path: screenshotPath,
+  contentType: 'image/png',
+});
 
-      // Log where the screenshot was saved.
       logger.error(`Screenshot saved: ${screenshotPath}`);
-    }
 
-    // Log the completion of the test.
-    logger.info(`Finished Test: ${testInfo.title}`);
+      /* // -------------------------------------------------------
+      // Attempt to attach Playwright's recorded video.
+      // -------------------------------------------------------
 
-    // Log the final test result.
-    logger.info(`Result: ${testInfo.status?.toUpperCase()}`);
+      // Find the video attachment that Playwright created.
+      const videoAttachment = testInfo.attachments.find(
+        attachment => attachment.contentType === 'video/webm'
+      );
 
-    // Log an additional error message if the test failed.
-    if (testInfo.status !== 'passed') {
+      // If a video exists, attach it to Allure.
+      if (videoAttachment?.path) {
+
+        await allure.attachmentPath(
+          'Failure Video',
+          videoAttachment.path,
+          {
+            contentType: 'video/webm',
+          }
+        );
+
+        logger.info(`Video attached: ${videoAttachment.path}`);
+      } else {
+
+        // Helpful debug message if no video was found.
+        logger.warn('No video attachment found.');
+
+      } */
+
       logger.error(`Test did not pass.`);
     }
 
-    // Log how long the test took to execute.
+    // Log test completion.
+    logger.info(`Finished Test: ${testInfo.title}`);
+
+    // Log final test status.
+    logger.info(`Result: ${testInfo.status?.toUpperCase()}`);
+
+    // Log execution time.
     logger.info(`Duration: ${testInfo.duration} ms`);
 
     logger.info(`========================================`);
   },
 });
 
-// Re-export Playwright's expect so tests can import both
-// test and expect from this custom fixture.
+// Re-export Playwright's expect so tests can import
+// both test and expect from this custom fixture.
 export { expect } from '@playwright/test';

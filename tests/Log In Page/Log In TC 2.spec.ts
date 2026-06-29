@@ -19,7 +19,7 @@ await expect(page.getByRole('heading', { name: 'Test login' })).toBeVisible();
 );
 //Verify error message is visible on the page
 await loginPage.getErrorMessage().then(errorMessage => {
-  expect(errorMessage).toBe('Your username is invalid!');
+  expect(errorMessage).toBe('Your username is invalid!cc');
 });
 
 });

@@ -1,6 +1,6 @@
-import {test,expect} from '@playwright/test';
-import {LoginPage} from '../../src/pages/LoginPage';
-import { testData } from '../../src/utils/testData';
+import {test,expect} from '../fixture/testFixture.js';
+import {LoginPage} from '../../src/pages/LoginPage.js';
+import { testData } from '../../src/utils/testData.js';
 
 //Test case to verify negative password test
 test('Login TC 3', async ({page}) => {
