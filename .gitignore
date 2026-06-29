@@ -7,6 +7,7 @@ test-results/
 allure-results/
 allure-report/
 failure-data/
+logs/
 
 # Environment files
 .env
