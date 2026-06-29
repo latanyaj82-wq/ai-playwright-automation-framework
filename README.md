@@ -100,3 +100,29 @@ This project demonstrates hands-on experience with modern QA automation engineer
 | **Developer Experience** | npm Scripts, Environment Variables, Project Documentation |
 | **Software Engineering Practices** | Clean Code, Code Reusability, Maintainability, Scalable Framework Design |
 | **Agile Methodologies** | Scrum, Jira, User Stories, Acceptance Criteria, Incremental Delivery |
+
+# 🏗️ Framework Architecture
+
+The AI Playwright Automation Framework follows a modular architecture that separates test logic, page objects, utilities, fixtures, reporting, and CI/CD to promote maintainability and scalability.
+
+## Overall Framework Architecture
+
+![Framework Architecture](docs/images/framework-architecture.png)
+
+---
+
+## Docker Architecture
+
+![Docker Architecture](docs/images/docker-architecture.png)
+
+---
+
+## GitHub Actions CI/CD Workflow
+
+![CI/CD Workflow](docs/images/cicd-workflow.png)
+
+---
+
+## Test Execution Flow
+
+![Test Execution Flow](docs/images/test-execution-flow.png)
