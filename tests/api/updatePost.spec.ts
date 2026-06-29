@@ -1,6 +1,6 @@
-import {test, expect} from '@playwright/test';
-import { Logger } from '../../src/utils/loggers';
-import { updatePostData } from '../../src/utils/testData';
+import {test, expect} from '../fixture/testFixture.js';
+import Logger from '../../src/utils/logger.js';
+import { updatePostData } from '../../src/utils/testData.js';
 
 test ('Update Existing Post', async({request}) =>{
     const payload = updatePostData;

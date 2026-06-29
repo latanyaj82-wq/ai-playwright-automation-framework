@@ -1,6 +1,6 @@
-import {test, expect, request} from '@playwright/test';
-import { Logger } from '../../src/utils/loggers';
-import { postData } from '../../src/utils/testData';    
+import {test, expect} from '../fixture/testFixture.js';
+import Logger from '../../src/utils/logger.js';
+import { postData } from '../../src/utils/testData.js';    
 
 test('Create New Post', async ({request}) =>{
 

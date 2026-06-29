@@ -1,5 +1,5 @@
-import {test, expect} from '@playwright/test';
-import { Logger } from '../../src/utils/loggers';
+import {test, expect} from '../fixture/testFixture.js';
+import Logger from '../../src/utils/logger.js';
 
 test ('Delete Existing Post', async ({request}) => {
 const response = await request.delete(
