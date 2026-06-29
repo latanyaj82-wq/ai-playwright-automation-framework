@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import {ExceptionPage} from '../../src/pages/ExceptionPage';
-import { verifyVisble } from '../../src/utils/helpers';
+import {ExceptionPage} from '../../src/pages/ExceptionPage.js';
+import { verifyVisble } from '../../src/utils/helpers.js';
 
 //Test case to verify TimeoutException
 test('Exception TC 5', async ({page}) => {
