@@ -110,10 +110,6 @@ The AI Playwright Automation Framework follows a modular architecture that separ
 The AI Playwright Automation Framework follows a modular architecture that separates test logic, page objects, fixtures, utilities, reporting, and CI/CD into independent layers. This design promotes maintainability, scalability, code reuse, and easier collaboration. Test execution flows through the Playwright engine across multiple browsers while automatically generating reports, logs, screenshots, and videos for comprehensive test analysis.
 
 ![Framework Architecture](docs/images/framework-architecture.png)
-
-<p align="center">
-  <img src="docs/images/framework-architecture.png" width="1000">
-</p>
 ---
 
 ## Docker Architecture
