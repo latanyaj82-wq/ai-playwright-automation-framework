@@ -1,6 +1,6 @@
-import {test, expect} from '@playwright/test';
-import {TablePage} from '../../src/pages/TablePage';
-import { Logger } from '../../src/utils/loggers';
+import {test, expect} from '../fixture/testFixture.js';
+import {TablePage} from '../../src/pages/TablePage.js';
+import Logger from '../../src/utils/logger.js';
 
 // Test case to verify Language Filter -> Java
 test('TC1: Verify Language Filter -> Java', async ({page}) => {

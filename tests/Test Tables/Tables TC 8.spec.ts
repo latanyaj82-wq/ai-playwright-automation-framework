@@ -1,5 +1,5 @@
-import {test, expect} from '@playwright/test';
-import { TablePage } from '../../src/pages/TablePage';
+import {test, expect} from '../fixture/testFixture.js';
+import { TablePage } from '../../src/pages/TablePage.js';
 
 //Test Case verifies Sort by Course Name (ascending, alphabetic)
 test('TC8: Verify Sorting by Course Name (ascending, alphabetic)', async ({page}) => {
@@ -31,9 +31,10 @@ const courseNames = await tablePage.getVisibleCourseName();
 
 console.log('Course Names:', courseNames);
 for (let i = 0; i < courseNames.length - 1; i++) {
-    expect(
-        courseNames[i].localeCompare(courseNames[i + 1])
-    ).toBeLessThanOrEqual(0);
+   // Verify each course name is alphabetically before (or equal to) the next one.
+expect(
+  courseNames[i]!.localeCompare(courseNames[i + 1]!)
+).toBeLessThanOrEqual(0);
 }
 
 });

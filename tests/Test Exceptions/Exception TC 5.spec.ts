@@ -1,4 +1,4 @@
-import {test, expect} from '@playwright/test';
+import {test, expect} from '../fixture/testFixture.js';
 import {ExceptionPage} from '../../src/pages/ExceptionPage.js';
 import { verifyVisble } from '../../src/utils/helpers.js';
 

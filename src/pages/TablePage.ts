@@ -1,5 +1,7 @@
-import {Page, Locator} from '@playwright/test';
-import { BASE_URL } from '../utils/env';
+// Import Playwright types used by this page object.
+import type { Page, Locator } from '@playwright/test';
+// Import the application's base URL configuration.
+import { BASE_URL } from '../utils/env.js';
 
 export class TablePage {
     readonly page: Page;

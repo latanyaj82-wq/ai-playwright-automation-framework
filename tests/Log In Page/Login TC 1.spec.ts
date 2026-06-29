@@ -2,10 +2,10 @@
  * Import Playwright's test runner and assertion library.
  * The 'test' function is used to define test cases, and 'expect' is used for making assertions about the state of the application.
 */
-import {test, expect} from '@playwright/test';
-import {LoginPage} from '../../src/pages/LoginPage';
-import { testData } from '../../src/utils/testData';
-import { verifyNotVisbile, verifyVisble } from '../../src/utils/helpers';
+import {test, expect} from '../fixture/testFixture.js';
+import {LoginPage} from '../../src/pages/LoginPage.js';
+import { testData } from '../../src/utils/testData.js';
+import { verifyNotVisbile, verifyVisble } from '../../src/utils/helpers.js';
 
 
 //Test case for verifying the login functionality of the application.

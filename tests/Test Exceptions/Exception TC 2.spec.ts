@@ -1,5 +1,5 @@
-import {test, expect} from '@playwright/test';
-import {ExceptionPage} from '../../src/pages/ExceptionPage';
+import {test, expect} from '../fixture/testFixture.js';
+import {ExceptionPage} from '../../src/pages/ExceptionPage.js';
 
 // test exception handling ElementNotInteractableException
 test('Exception TC 2', async ({page}) => {

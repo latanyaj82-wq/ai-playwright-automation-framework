@@ -1,5 +1,6 @@
-import {test, expect} from '@playwright/test';
-import { TablePage } from '../../src/pages/TablePage';
+import {test, expect} from '../fixture/testFixture.js';
+import { TablePage } from '../../src/pages/TablePage.js';
+import Logger from '../../src/utils/logger.js';
 
 
 //Test Case to verify Reset Button Visibility and Behavior

@@ -1,6 +1,6 @@
-import {test, expect} from '@playwright/test';
-import { TablePage } from '../../src/pages/TablePage';
-import { Logger } from '../../src/utils/loggers';
+import {test, expect} from '../fixture/testFixture.js';
+import { TablePage } from '../../src/pages/TablePage.js';
+import Logger from '../../src/utils/logger.js';
 
 //Test Case to verify Sorting by Enrollments (ascending, numeric)
 test('TC7: Verify Sorting by Enrollments (ascending, numeric)', async ({page}) => {
@@ -35,8 +35,9 @@ await page.getByRole('combobox', { name: 'Sort by:' })
   //console.log('Enrollments:', enrollments);
   Logger.info('Enrollments:', enrollments);
 
-  for (let i = 0; i < enrollments.length - 1; i++) {
-    expect(enrollments[i]).toBeLessThanOrEqual(enrollments[i + 1]);
-  }
+  // Verify each enrollment value is less than or equal to the next value.
+for (let i = 0; i < enrollments.length - 1; i++) {
+  expect(enrollments[i]!).toBeLessThanOrEqual(enrollments[i + 1]!);
+}
 
 });

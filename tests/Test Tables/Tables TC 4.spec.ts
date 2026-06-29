@@ -1,6 +1,6 @@
-import {test, expect} from '@playwright/test';
-import { TablePage } from '../../src/pages/TablePage';
-import { Logger } from '../../src/utils/loggers';
+import {test, expect} from '../fixture/testFixture.js';
+import { TablePage } from '../../src/pages/TablePage.js';
+import Logger from '../../src/utils/logger.js';
 
 // Test Case to verify Combined Filters ->Language: Python, Unselect Level: Intermediate and Advanced, Min Enrollment: 10,000+
 

@@ -1,5 +1,5 @@
-import {test, expect} from '@playwright/test';
-import {ExceptionPage} from '../../src/pages/ExceptionPage';
+import {test, expect} from '../fixture/testFixture.js';
+import {ExceptionPage} from '../../src/pages/ExceptionPage.js';
 
 //Exception test case to verify InvalidElementStateException
 test('Exception TC 3', async ({page}) => {
