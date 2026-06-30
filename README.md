@@ -1,5 +1,7 @@
 # 🤖 AI Playwright Automation Framework
 
+This is a test!
+
 A modern end-to-end UI and API automation framework built with Playwright, TypeScript, Docker, GitHub Actions, and Allure Reporting.
 
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
