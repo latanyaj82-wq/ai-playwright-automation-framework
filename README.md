@@ -1,6 +1,10 @@
 # 🤖 AI Playwright Automation Framework
 
+<<<<<<< HEAD
+This line was added from the feature branch.
+=======
 This line was added from main.
+>>>>>>> main
 
 A modern end-to-end UI and API automation framework built with Playwright, TypeScript, Docker, GitHub Actions, and Allure Reporting.
 
